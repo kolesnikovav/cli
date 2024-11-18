@@ -35,7 +35,7 @@ async function buildDirectory(dir, recursive = true) {
 		else
 		{
 			try {
-				const {imports} = await rollupBundle(config);
+				const {imports} = await rollupBundle(config, true);
 				await concat(config.concat.js, config.output.js);
 				await concat(config.concat.css, config.output.css);
 				await adjustExtension(imports, config);
